@@ -1,0 +1,131 @@
+.property_body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.625rem;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.174);
+  overflow: hidden;
+  border-radius: 0.625rem;
+  margin-bottom: 1.25rem;
+  min-width: 22.5rem;
+  min-height: 18.75rem;
+  background-color: white;
+  border-top: 1px solid rgb(232, 232, 232);
+}
+
+.card_img {
+  width: 22.5rem;
+  height: 15rem;
+  min-width: 100%;
+  max-height: 50%;
+  aspect-ratio: 3/2;
+  border-radius: 0.625rem 0.625rem 0 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  border-radius: 0.625rem 0.625rem 0 0;
+  transition: all 0.5s;
+}
+.default_estate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.default_estate img {
+  max-width: 80%;
+}
+.card_img:hover img {
+  scale: 1.1;
+}
+
+.card_caption {
+  position: relative;
+  width: 100%;
+  padding: 0.625rem 0.5rem 0.9375rem 0.5rem;
+}
+.status_badge {
+  background-color: var(--main_color_light);
+  font-size: 0.6875rem;
+  color: black;
+  position: absolute;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.9375rem;
+  min-width: 3.125rem;
+  text-align: center;
+  top: 0.625rem;
+}
+.status_badge_ar {
+  left: 0.5rem;
+}
+.status_badge_en {
+  right: 0.5rem;
+}
+
+.caption_header {
+  display: flex;
+  flex-direction: column;
+}
+.caption_header h4 {
+  margin: 0;
+  font-weight: 600;
+  margin-bottom: 0.3125rem;
+}
+.caption_header span {
+  color: var(--dark_white);
+  font-size: 0.6875rem;
+}
+.desc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  color: var(--dark_white);
+  width: 95%;
+  margin-top: 0.625rem;
+  font-weight: 600;
+}
+
+.compound_badge {
+  background-color: var(--deep_navy);
+  color: white;
+  padding: 0.3125rem 0.5625rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.percent_estate_badge {
+  font-size: 0.9375rem;
+}
+
+.green {
+  background-color: rgb(206, 243, 193);
+  color: green;
+}
+.red {
+  background-color: rgb(252, 191, 191);
+  color: red;
+}
+.yellow {
+  background-color: rgb(247, 247, 212);
+  color: rgb(157, 162, 8);
+}
+
+@media screen and (max-width: 350px) {
+  .property_body {
+    min-width: 99%;
+    min-height: auto;
+  }
+
+  .card_img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+  }
+}

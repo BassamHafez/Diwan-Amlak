@@ -1,0 +1,17 @@
+
+.error_message{
+    color:rgb(210, 5, 5) !important;
+    font-weight: 600;
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    transition: all .4s;
+}
+
+.error_message_ar{
+right:15px !important
+}
+.error_message_en{
+left: 15px !important;
+}

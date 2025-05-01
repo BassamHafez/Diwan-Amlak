@@ -1,0 +1,114 @@
+.contracts_body {
+  background-color: white;
+  margin-top: 1.875rem;
+  padding: 1.25rem;
+  border-radius: 1.875rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.12);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.contract_content {
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.12);
+  margin-top: 0.9375rem;
+  position: relative;
+  overflow: visible;
+}
+.estates_content{
+  border-radius: 0.625rem;
+  background-color: var(--sub_white);
+}
+.content_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.875rem;
+}
+
+.contract_table {
+  border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse;
+  page-break-inside: avoid;
+}
+.table_body tr {
+  page-break-inside: avoid;
+  page-break-after: auto ;
+}
+.table_body tr td {
+  text-align: center;
+  background-color: transparent;
+  padding: 0.625rem;
+}
+.note_td{
+  font-size: 0.875rem;
+}
+.table_head tr th {
+  background-color: #f8f9fd;
+  text-align: center;
+  color: var(--dark_white);
+  font-weight: 500;
+  padding: 0.625rem;
+}
+
+.status_span{
+  padding: 0.0625rem 0.75rem;
+  border-radius:0.9375rem;
+  font-size: 0.75rem;
+}
+
+.green{
+  background-color: rgb(206, 243, 193);
+  color: green;
+}
+.red{
+  background-color: rgb(252, 191, 191);
+  color: red;
+}
+.orange{
+  background-color: rgba(245, 207, 150, 0.228);
+  color: rgb(197, 131, 7);
+}
+.yellow{
+  background-color: rgb(247, 247, 212);
+  color: rgb(157, 162, 8);
+}
+.blue{
+  background-color: rgba(0, 98, 255, 0.232);
+  color:rgb(5, 70, 126)
+}
+.dropdown_menu{
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--dark_white) !important;
+}
+
+
+
+/* revenue */
+.select_type{
+  min-width: 9.375rem;
+}
+.rev_note{
+  font-size: 13px;
+  color: var(--dark_white);
+}
+
+@media screen and (max-width:800px) {
+    .content_header {
+        flex-direction: column;
+        align-items: start;
+      }
+}
+@media screen and (max-width:570px) {
+    .content_header {
+        padding-inline:2px;
+      }
+}

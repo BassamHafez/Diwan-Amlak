@@ -1,0 +1,119 @@
+.logo {
+  width: 70px;
+}
+.nav_list {
+  padding-inline: 1.25rem;
+}
+.nav_list a {
+  padding: 0;
+  margin-inline: 0.9375rem;
+  font-weight: 600;
+  color: black;
+  border-bottom: 0.125rem solid transparent;
+  transition: all 0.4s;
+}
+
+.nav_list a:hover {
+  border-bottom: 0.125rem solid var(--main_color);
+  scale: 1.05;
+}
+.nav_list a.active {
+  color: var(--main_color);
+  border-bottom: 0.125rem solid var(--main_color);
+}
+.nav_list a.active:hover {
+  scale: 1;
+}
+.nav_icon {
+  display: none;
+  color: var(--dark_white);
+}
+.ar_icon {
+  margin-left: 10px;
+}
+.en_icon {
+  margin-right: 10px;
+}
+.avatar {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  margin-inline: 10px;
+  border: 2px solid transparent;
+  transition: border 0.4s;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.avatar:hover {
+  border: 2px solid var(--main_color);
+}
+.nav_collapse {
+  display: flex;
+}
+
+.nav_controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+@media screen and (max-width: 992px) {
+  .nav_list {
+    overflow: hidden !important;
+    padding: 5px 0;
+  }
+  .nav_icon {
+    display: inline;
+  }
+  .nav_list a {
+    border-bottom: none;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .nav_list a:hover {
+    border-bottom: none;
+    scale: 1;
+    color: var(--sub_color);
+    background-color: var(--sub_light);
+  }
+  .nav_list a.active {
+    color: var(--sub_color);
+    border-bottom: none;
+    background-color: var(--sub_light);
+  }
+  .nav_collapse {
+    flex-direction: column-reverse !important;
+  }
+  .nav_controller {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 482px) {
+  .nav_controller div {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .nav_controller div {
+    margin: 10px;
+  }
+  .nav_controller {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 178px) {
+  .nav_icon {
+    display: none;
+  }
+}

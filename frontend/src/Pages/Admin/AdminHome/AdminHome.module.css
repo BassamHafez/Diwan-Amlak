@@ -1,0 +1,120 @@
+.information_section {
+  background-color: var(--sub_white);
+  padding: 1.25rem;
+  border-radius: 1.875rem;
+  box-shadow: 0 0.1875rem 0.1875rem rgba(0, 0, 0, 0.133);
+  min-height: 21.25rem;
+  margin-bottom: 1.25rem;
+}
+.box {
+  box-shadow: 0 0.125rem 0.1875rem rgba(0, 0, 0, 0.189);
+  border-top: 0.0625rem solid rgba(205, 205, 205, 0.189);
+  background-color: white;
+  display: flex;
+  min-width: 17.5rem;
+  border-radius: 1.875rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.box_caption {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 6.875rem;
+  padding-inline: 0.625rem;
+  min-width: 70%;
+}
+.box_caption span {
+  font-size: 0.625rem;
+  color: var(--dark_white);
+  margin-bottom: 0.3125rem;
+  text-align: center;
+}
+.box_caption p {
+  margin: 0;
+}
+.box_caption p span {
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin: 0;
+}
+.box_img {
+  background-color: var(--main_color_light);
+  min-width: 30%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.25rem;
+}
+.box_img_en {
+  border-radius: 0 4.375rem 4.375rem 0;
+}
+.box_img_ar {
+  border-radius: 4.375rem 0 0 4.375rem;
+}
+.box_img img {
+  width: 2.5rem;
+}
+.box_img svg {
+  font-size: 1.5625rem;
+  color: var(--sub_color);
+}
+
+.box:hover {
+  background-color: var(--main_color_light);
+  scale: 1.05;
+}
+.sky_bg {
+  background-color: #fff6e7;
+}
+.sky_bg2 {
+  background-color: #fff8de;
+}
+.caption {
+  background-color: white;
+  padding: 1.875rem;
+  border-radius: 1.25rem;
+  height: 100%;
+}
+.caption_list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.caption_list li span:first-child {
+  color: var(--dark_white);
+}
+.caption_list li span:last-child {
+  min-width: 80px;
+  text-align: center;
+}
+.contract_table {
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+.table_body tr td {
+  text-align: center;
+  background-color: transparent;
+  padding: 0.625rem;
+}
+
+.table_head tr th {
+  background-color: #f8f9fd;
+  text-align: center;
+  color: var(--dark_white);
+  font-weight: 500;
+  padding: 0.625rem;
+}
+
+@media screen and (max-width: 380px) {
+  .box {
+    min-width: 99%;
+  }
+}

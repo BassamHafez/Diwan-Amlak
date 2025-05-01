@@ -1,0 +1,125 @@
+.information_section {
+  background-color: var(--sub_white);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.133);
+  min-height: 340px;
+}
+.box {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.189);
+  background-color: white;
+  display: flex;
+  min-width: 210px;
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.box_caption {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 110px;
+  padding-inline: 10px;
+}
+.box_caption span {
+  font-size: 12px;
+  color: var(--dark_white);
+  margin-bottom: 5px;
+  text-align: center;
+}
+.box_caption p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+.box_img {
+  background-color: var(--main_color_light);
+  min-width: 30%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+.box_img_en {
+  border-radius: 0 70px 70px 0;
+}
+.box_img_ar {
+  border-radius: 70px 0 0 70px;
+}   
+
+.box_img img {
+  width: 40px;
+}
+
+.box:hover {
+  background-color: var(--main_color_light);
+  scale: 1.05;
+}
+
+.status_span {
+  padding: 0.0625rem 0.75rem;
+  border-radius: 0.9375rem;
+  font-size: 0.75rem;
+}
+
+.green {
+  background-color: rgb(206, 243, 193);
+  color: green;
+}
+.red {
+  background-color: rgb(252, 191, 191);
+  color: red;
+}
+.orange {
+  background-color: rgba(245, 207, 150, 0.228);
+  color: rgb(197, 131, 7);
+}
+.yellow {
+  background-color: rgb(247, 247, 212);
+  color: rgb(157, 162, 8);
+}
+.blue {
+  background-color: rgba(0, 98, 255, 0.232);
+  color: rgb(5, 70, 126);
+}
+
+.contract_table {
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+.table_body tr td {
+  text-align: center;
+  background-color: transparent;
+  padding: 0.625rem;
+}
+.note_td {
+  font-size: 0.875rem;
+}
+.table_head tr th {
+  background-color: #f8f9fd;
+  text-align: center;
+  color: var(--dark_white);
+  font-weight: 500;
+  padding: 0.625rem;
+}
+
+.eye_icon {
+  color: var(--dark_white);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.eye_icon:hover {
+  scale: 1.1;
+  color: var(--main_color);
+}
+@media screen and (max-width: 300px) {
+  .box {
+    min-width: auto;
+    width: 99%;
+  }
+}

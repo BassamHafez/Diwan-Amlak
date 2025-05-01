@@ -1,0 +1,14 @@
+/* sec4 testimonials */
+.Testimonials{
+    padding:1.25rem 0.625rem;
+    color: white;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,22 @@
+.date_type_list {
+    display: flex;
+    justify-content: end;
+    margin: 0;
+  }
+  
+  .date_type_list li {
+    padding: 3px 5px;
+    border-radius: 5px;
+    min-width: 40px;
+    text-align: center;
+    border: 1px solid var(--deep_navy);
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+  .date_type_list li:hover {
+    scale: 1.05;
+  }
+  .active_date_type {
+    background-color: var(--deep_navy);
+    color: white;
+  }

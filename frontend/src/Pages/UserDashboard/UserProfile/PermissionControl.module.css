@@ -1,0 +1,16 @@
+.perm_header h5{
+    text-align: start;
+    font-weight: 600;
+    margin: 5px 0 10px 0;
+}
+.perm_item{
+    border: 0.0625rem solid rgb(205, 204, 204);
+    padding:0.625rem;
+    min-width: 12.5rem;
+    border-radius: 0.625rem;
+    margin: 0.625rem 0;
+}
+
+.perm_item svg:hover{
+    scale:1.1
+}

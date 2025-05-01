@@ -1,0 +1,158 @@
+.main_container {
+  background-color: var(--sub_white);
+  padding: 1.25rem;
+}
+.filter_side {
+  box-shadow: 0 0rem 0.1875rem rgba(0, 0, 0, 0.264);
+  width: 100%;
+  min-height:70vh;
+  padding: 20px;
+  background-color: var(--deep_navy);
+  border-radius: 1.25rem;
+  color: rgb(228, 228, 228);
+}
+
+.tasks_content {
+  background-color: white;
+  height: 100%;
+  margin-inline: 0.625rem !important;
+  padding: 1.25rem 0.9375rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.filter_list li {
+  padding: 0.3125rem 0.3125rem;
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin: 5px 0;
+}
+.cirlce_color{
+  font-size: 12px;
+}
+.active {
+  background-color: rgba(255, 255, 255, 0.301);
+  color: white;
+}
+.filter_list li:hover {
+  background-color: rgba(255, 255, 255, 0.301);
+}
+.filter_side h6 {
+  font-size: 1.125rem;
+  margin-bottom: 0.3125rem;
+  color: var(--main_color);
+}
+
+.clear_btn {
+  text-align: center;
+}
+
+/* taskItem */
+.task_item {
+  background-color: var(--sub_white);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.222);
+  padding: 15px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.task_header {
+  display: flex;
+  flex-direction: column;
+}
+.task_header h5 {
+  margin: 0;
+}
+.task_header span {
+  font-size: 12px;
+  color: var(--dark_white);
+}
+.flags_ar,
+.flags_en {
+  position: absolute;
+  top: 10px;
+}
+.flags_ar {
+  left: 10px;
+}
+.flags_en {
+  right: 10px;
+}
+.desc {
+  font-size: 13px;
+  color: var(--dark_white);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.desc:hover{
+  white-space: normal;
+  overflow: visible;
+}
+.task_type {
+  padding-top: 20px;
+  width: 100%;
+}
+.task_type span {
+  margin-inline: 10px;
+  background-color: var(--main_color_light);
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+.controller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+
+}
+.controller div:last-child svg {
+  margin-inline: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: scale .5s;
+}
+.controller div:last-child svg:hover{
+  scale:1.2
+}
+@media screen and (max-width: 576px) {
+  .filter_side {
+    background-color: transparent;
+    box-shadow: none;
+    margin-bottom: 10px;
+    min-height: auto;
+  }
+  .filter_list li svg,
+  .clear_btn {
+    display: none;
+  }
+  .filter_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .filter_list li {
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    min-width: 100px;
+    text-align: center;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.384);
+    margin: 0.3125rem 0;
+  }
+  .filter_list li:hover {
+    background-color: rgb(225, 225, 225);
+    transform: translateY(-5px);
+  }
+  .active {
+    background-color: var(--deep_navy) !important;
+    color: white !important;
+  }
+}

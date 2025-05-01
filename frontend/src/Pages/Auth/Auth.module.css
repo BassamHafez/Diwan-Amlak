@@ -1,0 +1,151 @@
+.login_container {
+  width: 100vw;
+  min-height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  position: relative;
+}
+.layer {
+  background: linear-gradient(
+    -156deg,
+    var(--sky) 50%,
+    var(--main_color_light) 50%
+  );
+  position: absolute;
+  top: -75px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.login_content {
+  display: flex;
+  width: 75%;
+  min-height: 75vh;
+  border-radius: 0.9375rem;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.533);
+  overflow: hidden;
+}
+.login_caption {
+  min-height: 100%;
+  width: 50%;
+  background-color: var(--sky);
+  border-radius: 0.9375rem 0 0 0.9375rem;
+  padding: 1.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.caption_vector {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.caption_vector img {
+  width: 100%;
+}
+
+.login_form {
+  min-height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 0 0.9375rem 0.9375rem 0;
+  overflow: hidden;
+  padding: 20px;
+}
+.login_form h3 {
+  font-size: 2.1875rem;
+}
+
+/* form */
+
+.login_form_content {
+  width: 100%;
+}
+
+.show_pass_eye,
+.show_pass_eye_ar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  color: var(--dark_white);
+  cursor: pointer;
+}
+.show_pass_eye {
+  right: 0;
+  margin-right: 20px;
+}
+.show_pass_eye_ar {
+  left: 0;
+  margin-left: 20px;
+}
+
+.form_options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 15px 0;
+  color: var(--dark_white);
+}
+.form_options span {
+  font-size: 0.875rem;
+}
+.form_options span a {
+  color: rgb(14, 131, 240);
+}
+
+@media screen and (max-width: 1065px) {
+  .login_content {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 855px) {
+  .form_options {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .login_form {
+    padding: 0.625rem;
+  }
+  .caption_vector {
+    width: 21.875rem;
+  }
+}
+@media screen and (max-width: 570px) {
+  .login_container {
+    padding: 25px;
+  }
+  .login_caption {
+    display: none;
+  }
+  .login_form {
+    width: 100%;
+  }
+  .form_options {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 331px) {
+  .login_container {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 295px) {
+  .form_options {
+    flex-direction: column;
+    align-items: start;
+  }
+}
