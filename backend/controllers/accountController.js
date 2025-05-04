@@ -104,7 +104,9 @@ exports.checkPurchaseStatus = catchAsync(async (req, res, next) => {
   const retryDelay = 1500; // 1.5 sec
 
   async function attemptCheck() {
-    const purchase = await Purchase.findById(id).select("status").lean();
+    const purchase = await Purchase.findById(id)
+      .select("amount status type date")
+      .lean();
 
     if (!purchase) {
       return next(new ApiError("Purchase not found", 404));
@@ -120,6 +122,9 @@ exports.checkPurchaseStatus = catchAsync(async (req, res, next) => {
 
     res.status(200).json({
       status: purchase.status === "completed" ? "COMPLETED" : "NOT_COMPLETED",
+      amount: purchase.amount,
+      type: purchase.type,
+      date: purchase.date,
     });
   }
 
