@@ -13,6 +13,8 @@ import useCurrentFeatures from "../hooks/useCurrentFeatures";
 import useSaveLoginData from "../hooks/useSaveLoginData";
 import useValidation from "../hooks/useValidation";
 import useAddContactInForms from "../hooks/useAddContactInForms";
+import useSignOut from "../hooks/useSignOut";
+
 export {
   useFileHandler,
   useTagsOption,
@@ -28,7 +30,8 @@ export {
   useCurrentFeatures,
   useSaveLoginData,
   useValidation,
-  useAddContactInForms
+  useAddContactInForms,
+  useSignOut
 };
 
 export { useDispatch, useSelector } from "react-redux";

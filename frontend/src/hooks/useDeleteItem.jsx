@@ -28,6 +28,7 @@ const useDeleteItem = () => {
             hideModal();
           }
           notifySuccess(key("deletedSucc"));
+          return "success";
         } else {
           notifyError(key("wrong"));
         }

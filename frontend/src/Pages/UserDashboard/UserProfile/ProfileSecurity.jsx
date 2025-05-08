@@ -14,6 +14,7 @@ import {
   useSelector,
   useTranslation,
 } from "../../../shared/hooks";
+import DeleteUserForm from "./ProfileForms/DeleteUserForm";
 
 const ProfileSecurity = () => {
   const { t: key } = useTranslation();
@@ -63,7 +64,11 @@ const ProfileSecurity = () => {
               <h4 className="mb-4">{key("changePassword")}</h4>
               <SecurityForm LogOutProcess={LogOutProcess} />
             </div>
-            {/* delete account here */}
+            <div className={styles.container}>
+              <h4 className="mb-4">{key("deleteUser")}</h4>
+              <p>{key("deleteWarning")}</p>
+              <DeleteUserForm />
+            </div>
           </Col>
           <Col
             md={6}

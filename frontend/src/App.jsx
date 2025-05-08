@@ -55,25 +55,22 @@ const AllSubscriptions = lazy(() =>
 const AllAdmins = lazy(() => import("./Pages/Admin/myAdmins/AllAdmins"));
 const AllAccounts = lazy(() => import("./Pages/Admin/Accounts/AllAccounts"));
 const AllUsers = lazy(() => import("./Pages/Admin/Users/AllUsers"));
-const AllPackages = lazy(() => import("./Pages/Admin/Packages/AllPackages"));
-const AdminAccountSetting = lazy(() =>
-  import("./Pages/Admin/Setting/AdminAccountSetting")
-);
-const Configs = lazy(() => import("./Pages/Admin/Configs/Configs"));
 const AdminTestimonials = lazy(() =>
   import("./Pages/Admin/AdminTestimonials/AdminTestimonials")
 );
 const Support = lazy(() => import("./Pages/Admin/Support/Support"));
-const AdminTerms = lazy(() => import("./Pages/Admin/AdminTerms/AdminTerms"));
-const AdminSecurity = lazy(() =>
-  import("./Pages/Admin/AdminSecurity/AdminSecurity")
-);
-const Help = lazy(() => import("./Pages/Help/Help"));
 const VerifyPhonePage = lazy(() =>
   import("./Components/VerifyPhone/VerifyPhonePage")
 );
 const PageNotFound = lazy(() => import("./Pages/Error/PageNotFound"));
 const MainError = lazy(() => import("./Pages/Error/MainError"));
+const Help = lazy(() => import("./Pages/Help/Help"));
+
+import AdminSecurity from "./Pages/Admin/AdminSecurity/AdminSecurity";
+import AdminTerms from "./Pages/Admin/AdminTerms/AdminTerms";
+import AdminAccountSetting from "./Pages/Admin/Setting/AdminAccountSetting";
+import Configs from "./Pages/Admin/Configs/Configs";
+import AllPackages from "./Pages/Admin/Packages/AllPackages";
 
 const router = createBrowserRouter(
   [
@@ -297,7 +294,7 @@ function App() {
   const role = useSelector((state) => state.userInfo.role);
 
   useEffect(() => {
-    const updateFontFamily = () => {
+    const updateDirections = () => {
       if (control.language === "ar") {
         document.documentElement.setAttribute("dir", "rtl");
         document.documentElement.setAttribute("lang", "ar");
@@ -306,12 +303,12 @@ function App() {
         document.documentElement.setAttribute("lang", "en");
       }
     };
-    updateFontFamily();
+    updateDirections();
 
-    control.on("languageChanged", updateFontFamily);
+    control.on("languageChanged", updateDirections);
 
     return () => {
-      control.off("languageChanged", updateFontFamily);
+      control.off("languageChanged", updateDirections);
     };
   }, [control]);
 

@@ -1,29 +1,18 @@
-import { useDispatch } from "react-redux";
 import styles from "./MainModal.module.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
-import { userActions } from "../../../Store/userInfo-slice";
-import { saveIsLoginState } from "../../../Store/userInfo-actions";
 import { useTranslation } from "react-i18next";
-import { profileActions } from "../../../Store/profileInfo-slice";
+import useSignOut from "../../../hooks/useSignOut";
 
 const LogOutModal = ({ onClose, onHide, show }) => {
-  const dispatch = useDispatch();
+  const signOut = useSignOut();
   const navigate = useNavigate();
   const { t: key } = useTranslation();
   let isArLang = localStorage.getItem("i18nextLng") === "ar";
 
   const signOutHandler = () => {
-    localStorage.removeItem("userData");
-    localStorage.removeItem("role");
-    localStorage.removeItem("token");
-    localStorage.removeItem("lastNotificationTime");
-    dispatch(userActions.setRole(""));
-    dispatch(userActions.setIsLogin(false));
-    dispatch(saveIsLoginState(false));
-    dispatch(userActions.setRole(""));
-    dispatch(profileActions.setProfileInfo(null));
+    signOut();
     if (onClose) {
       onClose();
     }
