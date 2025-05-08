@@ -1,0 +1,214 @@
+.header {
+  background: linear-gradient(to right, #fef1e2, #e1edf3);
+  min-height: 50vh;
+  overflow: hidden;
+  padding: 0.625rem;
+  position: relative;
+  z-index: 5;
+}
+.estate_img {
+  width: 37.5rem;
+  max-height: 25rem;
+  aspect-ratio: 3/2;
+  border-radius: 1.875rem;
+}
+.estate_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.875rem;
+}
+.estate_main_details {
+  padding: 0.625rem;
+}
+.main_details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(0.625rem);
+  box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.12);
+  padding: 0.9375rem 0.125rem;
+  border-radius: 1.875rem;
+  min-width: 12.5rem;
+}
+.main_details span {
+  color: var(--dark_white);
+  font-size: 12px;
+}
+
+.main_details p {
+  margin: 0;
+  margin-top: 0.625rem;
+  font-size: 1.25rem;
+}
+
+.header_footer {
+  background-color: white;
+  margin: 0.625rem;
+  border-radius: 1.875rem;
+  box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.24);
+  padding: 0.625rem;
+}
+.header_footerItem {
+  background-color: var(--main_color);
+  color: white;
+  border-radius: 1.875rem;
+  padding: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 12.5rem;
+}
+.header_footerItem span {
+  font-size: 0.75rem;
+  color: var(--sub_light);
+}
+.header_footer p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+/* tabs */
+.tabs_section {
+  background-color: #f8f9fd;
+  padding: 3.125rem;
+}
+.information {
+  background-color: white;
+  box-shadow: 0 0 0.1875rem rgba(0, 0, 0, 0.12);
+  padding: 1.25rem;
+  border-radius: 30px;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+.information div h6 {
+  letter-spacing: 0.7px;
+}
+.prop_details_img {
+  width: 500px;
+}
+.info_list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.625rem 0;
+}
+.info_list li .title {
+  color: var(--dark_white);
+}
+.info_list li span {
+  font-size: 0.9375rem;
+}
+.info_list li span:last-child {
+  min-width: 6.25rem;
+  text-align: center;
+}
+
+.desc_content {
+  text-align: start;
+  background-color: rgb(253, 253, 253);
+  padding: 1.25rem 0.625rem;
+  border: 0.0625rem solid rgb(219, 219, 219);
+  border-radius: 0.625rem;
+  min-height: 7.5rem;
+  color: var(--dark_white);
+}
+
+.tag {
+  text-align: center;
+  border-radius: 0.625rem;
+  padding: 10px 2px;
+  margin: 8px 0;
+  border: 1px solid rgb(201, 201, 201);
+}
+
+.controller_btn,
+.bookmarked,
+.no_bookmark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--deep_navy);
+  color: white;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-inline: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s;
+}
+
+.delete_btn {
+  background-color: rgb(153, 3, 3);
+}
+.bookmarked:hover {
+  scale: 1.05;
+  background-color: transparent;
+  border: 1px solid var(--deep_navy);
+  color: black;
+}
+.delete_btn:hover {
+  background-color: red;
+  scale: 1.05;
+}
+.no_bookmark {
+  background-color: transparent;
+  border: 1px solid var(--deep_navy);
+  color: black;
+}
+.no_bookmark:hover {
+  background-color: var(--deep_navy);
+  color: white;
+  border: 1px solid transparent;
+}
+
+@media screen and (max-width: 890px) {
+  .main_details {
+    border-radius: 1.875rem;
+    min-width: 11.25rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 800px) {
+  .information {
+    padding: 20px 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .prop_details_img {
+    display: none;
+  }
+}
+@media screen and (max-width: 460px) {
+  .tabs_section {
+    background-color: #f8f9fd;
+    padding: 10px;
+  }
+  .information {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .info_list {
+    padding: 0;
+  }
+  .info_list li {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 355px) {
+  .estate_main_details_row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 245px) {
+  .header_footerItem {
+    min-width: 0;
+    width: 99%;
+  }
+}

@@ -1,0 +1,101 @@
+/* btn3 */
+/* ________________________________________white_btn__________________________________________ */
+.white_btn,.main_color_btn{
+    font-weight:600 !important;
+    font-size: 0.875rem;
+    padding:0.625rem 3.125rem !important;
+    border-radius: 0.3125rem;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s !important;
+    min-width: 8rem;
+}
+
+.white_btn{
+    background-color:white;
+    border: 1px solid var(--deep_navy) !important;
+}
+.white_btn .btn_text{
+    color:var(--deep_navy);
+}
+.main_color_btn .btn_text{
+    color: white;
+}
+.btn_text{
+    position: relative;
+    z-index:5 ;
+    transition: all .4s;
+}
+.first_layer1,.second_layer1,.third_layer1,.first_layer2,.second_layer2,.third_layer2{
+    position: absolute !important;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transform:translateX(-106%);
+}
+.first_layer1{
+    background-color:#8ba5b9;
+    transition: all .5s;
+}
+.second_layer1{
+    background-color: #495c6b;
+    transition: all .8s;
+}
+.third_layer1{
+    background-color: var(--deep_navy);
+    transform:translateX(-105%);
+    transition: all 1s;  
+}
+.white_btn:hover{
+    color:white;
+}
+.white_btn:hover .first_layer1{
+   transform:translateX(0);
+}
+ .white_btn:hover .second_layer1{
+   transform:translateX(0);
+}
+.white_btn:hover .third_layer1{
+    transform:translateX(0);
+} 
+
+/* ________________________________________main_color_btn__________________________________________ */
+.main_color_btn{
+    color:white ;
+    background-color:var(--deep_navy) !important;
+    box-shadow: 0 0 0.1875rem var(--deep_navy);
+}
+
+.first_layer2{
+    background-color:  #495c6b;
+    transition: all .5s;
+}
+.second_layer2{
+    background-color: #8ba5b9   ;
+    transform:translateX(-105%);
+    transition: all .8s;
+ 
+}
+.third_layer2{
+    background-color: rgb(255,255,255);
+    transform:translateX(-105%);
+    border-radius: 0.3125rem;
+    z-index: 3;
+    transition: all 1s;  
+}
+.white_btn:hover .btn_text{
+    color:white;
+}
+.main_color_btn:hover .btn_text{
+    color:var(--deep_navy);
+}
+.main_color_btn:hover .first_layer2{
+   transform:translateX(0);
+}
+ .main_color_btn:hover .second_layer2{
+   transform:translateX(0);
+}
+.main_color_btn:hover .third_layer2{
+    transform:translateX(0);
+} 

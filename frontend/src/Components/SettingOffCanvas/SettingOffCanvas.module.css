@@ -1,0 +1,80 @@
+.side_bar{
+    padding: 1.25rem 0;
+    padding-bottom: 0;
+    color:black !important;
+    border-radius: 2.5rem 0 0 2.5rem;
+}
+.profile_pic{   
+    width: 4.375rem;
+    height: 4.375rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all .3s;
+}
+.profile_name{
+    font-size: 1.4375rem;
+    font-weight: 700;
+    transition: color .3s;
+}
+.user_email{
+    font-size: 0.75rem;
+    color: var(--dark_white);
+}
+.profile_content{
+    cursor: pointer;
+}
+.profile_content:hover .profile_icon{
+    color: var(--main_color);
+}
+
+.profile_content:hover .profile_pic{
+    border: 2px solid var(--deep_navy);
+}
+
+.header{
+    border-bottom: 0.0625rem solid #2b2b2b2f;
+}
+
+.slide_footer{
+    font-size: 0.9375rem;
+}
+.contact_list{
+    text-align: start;
+    padding-inline: 0;
+}
+.contact_list_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   border-bottom: #2525252f 0.0625rem solid;
+   padding: 0.9375rem 0;
+   cursor: pointer;
+   transition: transform .3s;
+   overflow: hidden;
+}
+.contact_list_item {
+    color:  black;
+    font-weight: 650;
+    transition: all .3s;
+}   
+
+.contact_list_item:hover{
+    color: var(--main_color);
+    border-bottom-color: var(--main_color);
+    transform: scale(1.03);
+}
+.list_icons{
+    font-size: 1.4375rem;
+    margin-right: 0.9375rem;
+    color:var( --light)
+}
+.contact_list_item:hover .list_icons{
+    color:var(--main_color) ;
+}
+
+@media screen and (max-width:300px) {
+    .profile_content{
+        flex-direction: column;
+    }
+}

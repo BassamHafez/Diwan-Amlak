@@ -1,0 +1,15 @@
+.active,.unActive_choice{
+    opacity: 1;
+    cursor: pointer;
+    color: var(--main_color);
+    transition: opacity .4s;
+}
+
+.unActive_choice{
+    opacity: .5;
+    color: var(--dark_white);
+}
+
+.active:hover,.unActive_choice:hover{
+    opacity: .8;
+}

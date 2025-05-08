@@ -1,0 +1,229 @@
+.contacts_body {
+  background: var(--sub_white);
+  padding: 20px;
+  min-height: 84vh;
+  margin: 0;
+}
+.contacts_side {
+  background-color: white;
+  height: 100%;
+  margin-inline: 10px !important;
+  padding: 20px 10px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.contact_item {
+  padding: 20px;
+  background-color: var(--sub_white);
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.284);
+  min-height: 215px;
+}
+.phones_div {
+  min-height: 100px;
+}
+.note {
+  text-align: center;
+  background-color: var(--main_color_light);
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 70px;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: all 0.4s;
+}
+
+.note p {
+  margin: 0;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.note:hover p {
+  line-clamp: unset;
+  white-space: normal;
+  overflow: visible;
+}
+
+.noAvatar {
+  width: 50px;
+}
+
+.contact_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.img_side {
+  display: flex;
+  align-items: center;
+}
+.name_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.name_div h6 {
+  margin: 0;
+}
+.name_div span {
+  font-size: 13px;
+  color: var(--main_color);
+}
+
+.contacts_icons {
+  display: flex;
+  justify-content: end;
+  margin-inline: 10px;
+}
+.contact_icon {
+  font-size: 20px;
+  margin-inline: 5px;
+  color: var(--deep_navy);
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+.whatsappLink {
+  color: #25d366;
+}
+.controller_icons svg {
+  font-size: 20px;
+  margin-inline: 10px;
+  color: var(--deep_navy);
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+.controller_icons svg:hover,
+.contact_icon:hover {
+  transform: translateY(-3px);
+}
+.number {
+  font-size: 1.125rem;
+}
+.details_span{
+  min-width: 6.25rem;
+}
+.label_checked {
+  background-color: var(--main_color) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.filter_side {
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.195);
+  height: 100%;
+  width: 100%;
+  max-height: 65vh;
+  padding: 1.25rem;
+  background-color: white;
+  border-radius: 20px;
+}
+.select_contact_type {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding:0.625rem;
+}
+.select_contact_type div {
+  background-color: var(--deep_navy);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0.625rem;
+  margin: 0.625rem 0;
+  border-radius: 0.625rem;
+  min-width: 11.25rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.select_contact_type div:hover {
+  transform: translateY(-0.625rem);
+  background-color: var(--main_color);
+}
+
+.date_type_list {
+  display: flex;
+  justify-content: end;
+  margin: 0;
+}
+
+.date_type_list li {
+  margin-inline: 5px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  min-width: 40px;
+  text-align: center;
+  border: 1px solid var(--deep_navy);
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.date_type_list li:hover {
+  scale: 1.05;
+}
+.active_date_type {
+  background-color: var(--deep_navy);
+  color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .filter_side {
+    box-shadow: none;
+    margin-bottom: 20px;
+    background-color: transparent;
+    min-height: 0 !important;
+    height: fit-content !important;
+  }
+  .contacts_body {
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .contacts_side {
+    margin-inline: 0 !important;
+    padding: 20px 2px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .filter_row div {
+    width: 40%;
+  }
+  .controller_icons_ar {
+    margin-right: auto;
+  }
+  .controller_icons_en {
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 300px) {
+  .filter_row {
+    justify-content: center;
+  }
+  .filter_row div {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 270px) {
+  .controller_icons {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 216px) {
+  .select_contact_type div {
+    padding: 10px 5px;
+    margin: 15px 0;
+    min-width: 100%;
+  }
+  .select_contact_type div h5 {
+    font-size: 17px;
+  }
+}

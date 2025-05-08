@@ -1,0 +1,24 @@
+.language_icon {
+    background-color: transparent;
+    border-radius: 40px;
+    margin-inline: 1.5625rem;
+    transition: all 0.4s;
+    display: flex;
+    align-items: center;
+    max-height: 40px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.204);
+    border: 1px solid rgb(237, 237, 237);
+  }
+  .lang_btn {
+    border: none !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    transition: color 0.4s;
+  }
+  .lang_btn:hover {
+    color: white !important;
+  }
+  .language_icon:hover {
+    background-color: var(--main_color);
+    border: 1px solid transparent;
+  }

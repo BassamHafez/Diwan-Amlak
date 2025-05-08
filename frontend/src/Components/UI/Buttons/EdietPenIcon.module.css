@@ -1,0 +1,74 @@
+.ediet_div {
+  position: absolute;
+  top: 1.5625rem;
+  background-color: var(--sky);
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.3125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.8s;
+}
+.ediet_div_ar {
+  left: 1.25rem;
+}
+.ediet_div_en {
+  right: 1.25rem;
+}
+
+.ediet_pen_icon {
+  color: var(--main_color);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.ediet_span {
+  font-size: 0.8125rem !important;
+  color: var(--main_color);
+  font-weight: 700;
+  text-align: center;
+  overflow: hidden;
+  width: 0;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.penColorGray {
+  height: 2.5rem;
+  background-color: var(--deep_navy);
+}
+.penColorGray svg {
+  color: white;
+}
+.penColorGray span {
+  color: white !important;
+}
+
+.ediet_div:hover {
+  padding: 0.5rem 0.3125rem;
+  justify-content: space-evenly;
+  width: 5rem;
+}
+
+.ediet_div:hover .ediet_span {
+  opacity: 1;
+  width: 2.5rem;
+}
+
+
+@media screen and (max-width: 360px) {
+  .ediet_div,
+  .penColorGray {
+    top: 6%;
+    transform: translateY(0);
+  }
+  .ediet_div_ar {
+    left: 3%;
+  }
+  .ediet_div_en {
+    right: 3%;
+  }
+}

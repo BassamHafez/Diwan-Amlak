@@ -1,0 +1,98 @@
+.btn_one{
+    padding: 8px 14px;
+    background-color: var(--main_color);
+    color: white;
+    min-width: 6.875rem;
+    overflow:hidden ;
+    font-weight: 600;
+    transition: all .4s;
+}
+.white_btn{
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    border:1px solid rgb(228, 228, 228)
+}
+
+.btn_one_layer{
+    background-color: white;
+    width: 1.25rem;
+    height:150%;
+    position: absolute;
+    left: 0;
+    top:50%;
+    transform: translate(-50%,-50%);
+    rotate: 15deg;
+    opacity: 0;
+    display: none;
+    transition: all .4s;
+}
+.white_btn .btn_one_layer{
+    background-color: var(--main_color_light);
+}
+
+.btn_one:hover{
+    scale: 1.03;
+}
+
+.btn_one:hover .btn_one_layer{
+    display: block;
+    animation-name: buttonMovement;
+    animation-duration: .3s;
+    animation-direction: alternate;
+} 
+
+@keyframes buttonMovement {
+    0%{opacity: 0;left: 0;}
+    99%{opacity: 1;left: 100%;}
+    100%{opacity: 0;}
+}
+
+.rounded_btn{
+    border-radius: 1.875rem;
+    padding: 0.625rem 1rem;
+}
+/* btn2 */
+
+.btn_two{
+    background-color: var(--main_color);
+    color: white;
+    padding: 15px 25px;
+    min-width: 140px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    border-radius: 1.875rem;
+    transition: all .4s;
+}
+.btn_two:hover{
+    scale: 1.08;
+    background-color: transparent;
+    color: var(--main_color);
+    border: 1px solid var(--main_color);
+}
+
+/* scroll top */
+
+.top_btn{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: var(--main_color);
+    opacity: .5;
+    position: fixed;
+    bottom: 1.25rem;
+    right: 0.9375rem;
+    padding: 0.5rem 0.625rem;
+    border-radius: 0.3125rem;
+    color: white;
+    font-size: 1.25rem;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    transition: all .3s;
+}
+.top_btn:hover{
+    transform: translateY(-10px);
+    opacity: 1;
+}
+

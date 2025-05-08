@@ -1,0 +1,58 @@
+/* sec1  why choose us*/
+.section1_img_side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+}
+.section1_img {
+  width: 500px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0.3125rem;
+}
+
+.section1_img img {
+  width: 100%;
+  border-radius: 0.3125rem;
+}
+
+.acc_p {
+  font-weight: 600;
+  color: var(--dark_white);
+}
+
+/* sec2  about*/
+.section2_img_side {
+  background-color: var(--deep_navy);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  min-width: 85%;
+  border-radius: 100px 10px 100px 10px;
+}
+.section2_logo_img {
+  width: 250px;
+}
+.section2_logo_img img {
+  width: 100%;
+}
+
+.sec2_list_item {
+  margin: 30px 0;
+  color: var(--dark_white);
+  font-weight: 600;
+  text-align: start;
+  padding-inline: 10px;
+}
+
+@media screen and (max-width: 459px) {
+  .sec1_caption_side {
+    padding: 0px !important;
+  }
+  .section2_img_side {
+    min-width: 99%;
+    border-radius: 10px;
+  }
+}
