@@ -1,15 +1,9 @@
 import "./App.css";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./Pages/Root";
-import Home from "./Pages/Home/Home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Login from "./Pages/Auth/Login/Login";
-import Register from "./Pages/Auth/Register/Register";
-import About from "./Pages/About/About";
-import Contact from "./Pages/Contact/Contact";
-import Packages from "./Pages/Packages/Packages";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getisLoginState,
@@ -17,38 +11,69 @@ import {
   getToken,
   getUserInfoFromLocalStorage,
 } from "./Store/userInfo-actions";
-import UserHome from "./Pages/UserDashboard/UserHome/UserHome";
 import fetchProfileData from "./Store/profileInfo-actions";
-import Properties from "./Pages/UserDashboard/Properties/Properties";
-import Tasks from "./Pages/UserDashboard/Tasks/Tasks";
-import Contacts from "./Pages/UserDashboard/Contacts/Contacts";
-import PropertyDetails from "./Pages/UserDashboard/PropertyDetails/PropertyDetails";
-import CompoundDetails from "./Pages/UserDashboard/PropertyDetails/CompoundDetails";
-import UserProfile from "./Pages/UserDashboard/UserProfile/UserProfile";
 import fetchAccountData from "./Store/accountInfo-actions";
-import CustomPackages from "./Pages/Packages/CustomPackages";
-import PageNotFound from "./Pages/Error/PageNotFound";
-import MainError from "./Pages/Error/MainError";
-import Help from "./Pages/Help/Help";
-import Reports from "./Pages/UserDashboard/Reports/Reports";
-import ForgetPassword from "./Pages/Auth/ForgetPassword/ForgetPassword";
-import AllSubscriptions from "./Pages/Admin/Subscriptions/AllSubscriptions";
-import AdminHome from "./Pages/Admin/AdminHome/AdminHome";
-import AllPackages from "./Pages/Admin/Packages/AllPackages";
-import AllAccounts from "./Pages/Admin/Accounts/AllAccounts";
-import AllUsers from "./Pages/Admin/Users/AllUsers";
-import AllAdmins from "./Pages/Admin/myAdmins/AllAdmins";
-import AdminAccountSetting from "./Pages/Admin/Setting/AdminAccountSetting";
-import Configs from "./Pages/Admin/Configs/Configs";
-import VerifyPhonePage from "./Components/VerifyPhone/VerifyPhonePage";
-import AdminTestimonials from "./Pages/Admin/AdminTestimonials/AdminTestimonials";
 import fetchConfigs from "./Store/configs-actions";
-import Support from "./Pages/Admin/Support/Support";
-import AdminTerms from "./Pages/Admin/AdminTerms/AdminTerms";
-import TermsAndConditions from "./Pages/UserDashboard/TermsAndConditions/TermsAndConditions";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
-import PaymentResponse from "./Pages/Subscribe/PaymentResponse";
-import AdminSecurity from "./Pages/Admin/AdminSecurity/AdminSecurity";
+
+import Root from "./Pages/Root";
+import { LoadingOne } from "./shared/components";
+const Home = lazy(() => import("./Pages/Home/Home"));
+const About = lazy(() => import("./Pages/About/About"));
+const Contact = lazy(() => import("./Pages/Contact/Contact"));
+const Login = lazy(() => import("./Pages/Auth/Login/Login"));
+const Register = lazy(() => import("./Pages/Auth/Register/Register"));
+const Packages = lazy(() => import("./Pages/Packages/Packages"));
+const CustomPackages = lazy(() => import("./Pages/Packages/CustomPackages"));
+const UserHome = lazy(() => import("./Pages/UserDashboard/UserHome/UserHome"));
+const Properties = lazy(() =>
+  import("./Pages/UserDashboard/Properties/Properties")
+);
+const PropertyDetails = lazy(() =>
+  import("./Pages/UserDashboard/PropertyDetails/PropertyDetails")
+);
+const CompoundDetails = lazy(() =>
+  import("./Pages/UserDashboard/PropertyDetails/CompoundDetails")
+);
+const Contacts = lazy(() => import("./Pages/UserDashboard/Contacts/Contacts"));
+const Tasks = lazy(() => import("./Pages/UserDashboard/Tasks/Tasks"));
+const UserProfile = lazy(() =>
+  import("./Pages/UserDashboard/UserProfile/UserProfile")
+);
+const Reports = lazy(() => import("./Pages/UserDashboard/Reports/Reports"));
+const TermsAndConditions = lazy(() =>
+  import("./Pages/UserDashboard/TermsAndConditions/TermsAndConditions")
+);
+const PaymentResponse = lazy(() => import("./Pages/Subscribe/PaymentResponse"));
+const ForgetPassword = lazy(() =>
+  import("./Pages/Auth/ForgetPassword/ForgetPassword")
+);
+const AdminHome = lazy(() => import("./Pages/Admin/AdminHome/AdminHome"));
+const AllSubscriptions = lazy(() =>
+  import("./Pages/Admin/Subscriptions/AllSubscriptions")
+);
+const AllAdmins = lazy(() => import("./Pages/Admin/myAdmins/AllAdmins"));
+const AllAccounts = lazy(() => import("./Pages/Admin/Accounts/AllAccounts"));
+const AllUsers = lazy(() => import("./Pages/Admin/Users/AllUsers"));
+const AllPackages = lazy(() => import("./Pages/Admin/Packages/AllPackages"));
+const AdminAccountSetting = lazy(() =>
+  import("./Pages/Admin/Setting/AdminAccountSetting")
+);
+const Configs = lazy(() => import("./Pages/Admin/Configs/Configs"));
+const AdminTestimonials = lazy(() =>
+  import("./Pages/Admin/AdminTestimonials/AdminTestimonials")
+);
+const Support = lazy(() => import("./Pages/Admin/Support/Support"));
+const AdminTerms = lazy(() => import("./Pages/Admin/AdminTerms/AdminTerms"));
+const AdminSecurity = lazy(() =>
+  import("./Pages/Admin/AdminSecurity/AdminSecurity")
+);
+const Help = lazy(() => import("./Pages/Help/Help"));
+const VerifyPhonePage = lazy(() =>
+  import("./Components/VerifyPhone/VerifyPhonePage")
+);
+const PageNotFound = lazy(() => import("./Pages/Error/PageNotFound"));
+const MainError = lazy(() => import("./Pages/Error/MainError"));
 
 const router = createBrowserRouter(
   [
@@ -290,7 +315,6 @@ function App() {
     };
   }, [control]);
 
-  
   //fetchMainConfigs
   useEffect(() => {
     dispatch(fetchConfigs());
@@ -324,7 +348,9 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <Suspense fallback={<LoadingOne />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </QueryClientProvider>
   );
 }
