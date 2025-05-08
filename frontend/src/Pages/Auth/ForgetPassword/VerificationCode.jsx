@@ -24,7 +24,6 @@ const VerificationCode = ({ show, onHide }) => {
   const { mutate, isPending } = useMutation({
     mutationFn: signFormsHandler,
     onSuccess: (data) => {
-      console.log(data);
       if (data?.data?.status === "Success") {
         setIsCodeWrong(false);
         setShowModal(true);

@@ -106,7 +106,6 @@ const UpdateEstate = ({
   };
 
   const onSubmit = (values, { resetForm }) => {
-    console.log(values);
     const formData = new FormData();
 
     if (values.compound?.value === "not") {
@@ -118,7 +117,6 @@ const UpdateEstate = ({
         notifyError(key("cityReq"));
         return;
       }
-      console.log("hi");
       formData.append("city", values.city);
       formData.append("region", values.region);
       formData.append("neighborhood", values.neighborhood || "not specified");
@@ -173,7 +171,6 @@ const UpdateEstate = ({
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 if (isTagsExist) {

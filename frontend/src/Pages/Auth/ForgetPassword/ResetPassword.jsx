@@ -30,7 +30,6 @@ const ResetPassword = ({ show, onHide }) => {
   const { mutate, isPending } = useMutation({
     mutationFn: signFormsHandler,
     onSuccess: (data) => {
-      console.log(data);
       if (data.data.status === "success") {
         setIsRightEmail(false);
         notifySuccess(key("newPassSaved"));
@@ -57,7 +56,6 @@ const ResetPassword = ({ show, onHide }) => {
   };
 
   const onSubmit = (values) => {
-    console.log(values);
     mutate({
       formData: values,
       method: "put",

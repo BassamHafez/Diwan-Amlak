@@ -70,7 +70,6 @@ const UpdateUserData = ({ profileInfo, hideModal }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 dispatch(fetchProfileData(token));
                 resetForm();

@@ -52,7 +52,6 @@ const AddAdmin = ({ refetch, hideModal }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

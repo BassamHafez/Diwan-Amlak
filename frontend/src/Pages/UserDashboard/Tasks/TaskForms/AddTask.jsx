@@ -90,7 +90,6 @@ const AddTask = ({ hideModal, refetch, propId, compId }) => {
     }
 
     const cleanedValues = cleanUpData({ ...updatedValues });
-    console.log(cleanedValues);
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -102,7 +101,6 @@ const AddTask = ({ hideModal, refetch, propId, compId }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

@@ -96,7 +96,6 @@ const ReportsForm = ({
       updatedValues.status = values.status;
     }
 
-    console.log(updatedValues);
     const cleanedValues = cleanUpData({ ...updatedValues });
 
     let endPoint = "income";
@@ -142,7 +141,6 @@ const ReportsForm = ({
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (type === "contractsReport") {
                   getSearchData(data?.data, printDataValues);

@@ -35,7 +35,6 @@ const SubscribeVip = ({ accountId, hideModal, refetch }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 resolve();

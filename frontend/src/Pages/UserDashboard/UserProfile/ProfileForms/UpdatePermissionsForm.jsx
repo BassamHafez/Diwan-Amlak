@@ -96,7 +96,6 @@ const UpdatePermissionsForm = ({
       },
       {
         onSuccess: (data) => {
-          console.log(data);
           if (data?.status === "success") {
             dispatch(fetchAccountData(token));
             notifySuccess(key("updatedSucc"));

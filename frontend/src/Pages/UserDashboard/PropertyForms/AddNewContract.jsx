@@ -105,7 +105,6 @@ const AddNewContract = ({ hideModal, refetch, refetchDetails }) => {
   };
 
   const onSubmit = async (values, { resetForm }) => {
-    console.log(values);
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -117,7 +116,6 @@ const AddNewContract = ({ hideModal, refetch, refetchDetails }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (
                 data?.response?.data?.message ===
                 "There is an contract overlapping with the selected dates"

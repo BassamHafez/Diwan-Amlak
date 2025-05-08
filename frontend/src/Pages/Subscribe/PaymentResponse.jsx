@@ -12,25 +12,25 @@ import { ButtonOne, MainTitle, NoData } from "../../shared/components";
 import { FontAwesomeIcon } from "../../shared/index";
 import { faSpinner } from "../../shared/constants";
 import fetchAccountData from "../../Store/accountInfo-actions";
-import FailPayment from "./FailPayment";
 import styles from "./Payment.module.css";
-import SuccessPayment from "./SuccessPayment";
+import PaymentDetails from "./PaymentDetails";
 
 const PaymentResponse = () => {
   const token =
     useSelector((state) => state.userInfo.token) ||
     JSON.parse(localStorage.getItem("token"));
+  const profileInfo = useSelector((state) => state.profileInfo.data);
   const paymentId = localStorage.getItem("paymentId");
   const { t: key } = useTranslation();
   const navigate = useNavigate();
   const { status } = useParams();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem("paymentId");
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     localStorage.removeItem("paymentId");
+  //   };
+  // }, []);
 
   const { data, isFetching } = useQuery({
     queryKey: ["paymentResponse", token],
@@ -42,7 +42,7 @@ const PaymentResponse = () => {
     enabled: !!paymentId && !!token,
     staleTime: Infinity,
   });
-  console.log(data, "payment response data");
+
   useEffect(() => {
     if (data && data.status === "COMPLETED" && status === "success") {
       dispatch(fetchAccountData(token));
@@ -50,7 +50,7 @@ const PaymentResponse = () => {
   }, [data, status, dispatch, token]);
 
   const navigateToHome = () => {
-    navigate("/");
+    navigate(`/profile/${profileInfo?._id}`);
   };
 
   return (
@@ -61,19 +61,23 @@ const PaymentResponse = () => {
         <MainTitle title={key("paymentDetails")} />
         {isFetching ? (
           <div className="position-absolute top-0 start-0 w-100 h-100 rounded-5 d-flex justify-content-center align-items-center flex-column">
-            <FontAwesomeIcon icon={faSpinner} className="fa-spin fa-3x mb-3" />
+            <FontAwesomeIcon
+              icon={faSpinner}
+              className="fa-spin fa-3x mb-3 text-secondary"
+            />
             <span className="fa fa-fade">{key("paymentLoading")}</span>
           </div>
-        ) : data && data.status === "COMPLETED" && status === "success" ? (
-          <SuccessPayment />
-        ) : data && data.status === "NOT_COMPLETED" && status === "faild" ? (
-          <FailPayment />
+        ) : data ? (
+          <PaymentDetails data={data} />
         ) : (
           <NoData text={key("wrong")} smallSize />
         )}
-        <div className="text-center position-relative mt-4">
-          <ButtonOne borderd text={key("home")} onClick={navigateToHome} />
-        </div>
+
+        {!isFetching && (
+          <div className="text-center position-relative mt-4">
+            <ButtonOne borderd text={key("profile")} onClick={navigateToHome} />
+          </div>
+        )}
       </div>
     </div>
   );

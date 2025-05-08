@@ -54,7 +54,6 @@ const ExtendContract = ({
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 await refetchDetails();

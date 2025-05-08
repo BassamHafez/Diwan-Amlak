@@ -53,7 +53,6 @@ const MainPayForm = ({ hideModal, refetch, type, Id, refetchDetails }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 await refetchDetails();

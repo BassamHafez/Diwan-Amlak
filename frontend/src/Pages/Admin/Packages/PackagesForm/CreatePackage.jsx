@@ -125,8 +125,6 @@ const CreatePackage = ({ refetch, hideModal }) => {
       features: featuresArr,
     };
 
-    console.log(updatedValues);
-
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -138,7 +136,6 @@ const CreatePackage = ({ refetch, hideModal }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

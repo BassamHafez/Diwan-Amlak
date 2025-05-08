@@ -62,7 +62,6 @@ const AddTestimonial = ({ hideModal, refetch }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 resolve();

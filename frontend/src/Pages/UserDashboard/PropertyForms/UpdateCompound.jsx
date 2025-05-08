@@ -133,7 +133,6 @@ const UpdateCompound = ({ compoundData, hideModal, refetch }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 if (values.tags?.length > 0) {

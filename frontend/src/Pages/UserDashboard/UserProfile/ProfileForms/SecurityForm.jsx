@@ -50,7 +50,6 @@ const SecurityForm = ({ LogOutProcess }) => {
       },
       {
         onSuccess: (data) => {
-          console.log(data);
           if (data?.status === "success") {
             notifySuccess(key("updatedSucc"));
             resetForm();

@@ -362,10 +362,6 @@ export const calculateRevenues = (
     !paymentPeriodUnit ||
     (paymentPeriodUnit !== "year" && !unitMultipliers[paymentPeriodUnit])
   ) {
-    console.log(paymentPeriodUnit);
-    console.error(
-      "Invalid paymentPeriodUnit. Use 'day', 'week', 'month', or 'year'"
-    );
     return [];
   }
 

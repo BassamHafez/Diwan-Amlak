@@ -44,7 +44,6 @@ const SplitRevenue = ({
 
   const onSubmit = (values, { resetForm }) => {
     const cleanedValues = cleanUpData({ ...values });
-    console.log(cleanedValues);
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -56,7 +55,6 @@ const SplitRevenue = ({
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 await refetchDetails();

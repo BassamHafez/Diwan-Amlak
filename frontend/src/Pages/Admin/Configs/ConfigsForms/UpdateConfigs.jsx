@@ -61,7 +61,6 @@ const UpdateConfigs = () => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 dispatch(fetchConfigs());
                 resolve();

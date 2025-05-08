@@ -101,8 +101,6 @@ const UpdateTask = ({ hideModal, refetch, task, propId, compId }) => {
       updatedValues.description = values.description;
     }
 
-    console.log(updatedValues);
-
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -114,7 +112,6 @@ const UpdateTask = ({ hideModal, refetch, task, propId, compId }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

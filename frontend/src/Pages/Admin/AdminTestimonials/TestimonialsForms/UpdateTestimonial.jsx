@@ -58,7 +58,6 @@ const UpdateTestimonial = ({ hideModal, refetch, content }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 resetForm();

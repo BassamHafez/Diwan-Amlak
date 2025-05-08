@@ -68,7 +68,6 @@ const CompoundsReportForm = ({
     }
 
     const cleanedValues = cleanUpData({ ...updatedValues });
-    console.log(cleanedValues)
     const endPoint = isDetails ? "compound-details" : "compounds";
 
     const printDataValues = { ...updatedValues };
@@ -79,7 +78,6 @@ const CompoundsReportForm = ({
       printDataValues.compoundId = printDataValues.compoundId.label;
     }
 
-    console.log("printed",printDataValues)
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -91,7 +89,6 @@ const CompoundsReportForm = ({
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (isDetails) {
                   getSearchData(data?.data, printDataValues);

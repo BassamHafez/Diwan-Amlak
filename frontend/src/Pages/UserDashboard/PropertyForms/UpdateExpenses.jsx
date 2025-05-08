@@ -72,8 +72,6 @@ const UpdateExpenses = ({ hideModal, refetch, exDetails, refetchDetails }) => {
     }
     const cleanedValues = cleanUpData({ ...updatedValues });
 
-    console.log(cleanedValues);
-
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -85,7 +83,6 @@ const UpdateExpenses = ({ hideModal, refetch, exDetails, refetchDetails }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 await refetchDetails();

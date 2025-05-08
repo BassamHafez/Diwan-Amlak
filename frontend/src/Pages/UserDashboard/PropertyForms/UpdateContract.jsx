@@ -112,7 +112,6 @@ const UpdateContract = ({ contract, hideModal, refetch, refetchDetails }) => {
       paymentPeriodValue: values.paymentPeriodValue,
       paymentPeriodUnit: values.paymentPeriodUnit,
     };
-    console.log(updatedValues);
 
     toast.promise(
       new Promise((resolve, reject) => {
@@ -125,7 +124,6 @@ const UpdateContract = ({ contract, hideModal, refetch, refetchDetails }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (
                 data.response?.data?.message ===
                 "There is an contract overlapping with the selected dates"
@@ -170,7 +168,6 @@ const UpdateContract = ({ contract, hideModal, refetch, refetchDetails }) => {
   });
 
   const showCalculatedRevenues = (values) => {
-    console.log(values);
     const {
       totalAmount,
       paymentPeriodValue,

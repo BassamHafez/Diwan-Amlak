@@ -111,7 +111,6 @@ const AddCompound = ({ hideModal, refetch }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 dispatch(fetchAccountData(token));

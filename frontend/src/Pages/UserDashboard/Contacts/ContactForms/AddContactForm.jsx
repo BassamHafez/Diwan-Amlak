@@ -96,8 +96,6 @@ const AddContactForm = ({
 
     const cleanedValues = cleanUpData(updatedValues);
 
-    console.log(cleanedValues);
-
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -109,7 +107,6 @@ const AddContactForm = ({
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

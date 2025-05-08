@@ -35,7 +35,7 @@ const SendMessaagesForm = ({
   const token = useSelector((state) => state.userInfo.token);
   const myIds = selectedUsers?.length > 0 ? selectedUsers : allUsers;
 
-  const { mutate } = useMutation({
+  const { mutate,isPending } = useMutation({
     mutationFn: mainFormsHandlerTypeFormData,
   });
 
@@ -72,7 +72,6 @@ const SendMessaagesForm = ({
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 clearSelectedUsersIds();
                 resolve();

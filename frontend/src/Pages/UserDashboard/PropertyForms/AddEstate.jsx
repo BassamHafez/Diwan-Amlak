@@ -77,7 +77,6 @@ const AddEstate = ({ hideModal, refetch, compId }) => {
   };
 
   const onSubmit = (values, { resetForm }) => {
-    console.log(values);
     const formData = new FormData();
 
     if (values.compound) {
@@ -128,7 +127,6 @@ const AddEstate = ({ hideModal, refetch, compId }) => {
       },
       {
         onSuccess: (data) => {
-          console.log(data);
           if (data?.status === "success") {
             refetch();
             dispatch(fetchAccountData(token));

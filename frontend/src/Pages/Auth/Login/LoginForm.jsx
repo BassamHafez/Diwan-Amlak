@@ -37,7 +37,6 @@ const LoginForm = () => {
     onSuccess: (response) => {
       let res = response.data;
       if (res.status === "success") {
-        console.log("res", res);
         if (res?.data.user) {
           saveDataIntoRedux(res);
         }

@@ -57,12 +57,9 @@ const AddRevenue = ({ hideModal, refetch, refetchDetails }) => {
       dueDate: values.dueDate,
       type: values.type,
     };
-    console.log(values);
     if (values.note) {
       updatedValues.note = values.note;
     }
-
-    console.log(updatedValues);
 
     toast.promise(
       new Promise((resolve, reject) => {
@@ -75,7 +72,6 @@ const AddRevenue = ({ hideModal, refetch, refetchDetails }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 await refetchDetails();

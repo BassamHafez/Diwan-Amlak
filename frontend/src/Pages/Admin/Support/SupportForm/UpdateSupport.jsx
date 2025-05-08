@@ -31,7 +31,6 @@ const UpdateSupport = ({ msgStatus, msgId, refetch, hideModal }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 resolve();

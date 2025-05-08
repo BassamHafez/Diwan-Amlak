@@ -106,8 +106,6 @@ const UpdateContactForm = ({
       delete cleanedValues.type;
     }
 
-    console.log(cleanedValues);
-
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -119,7 +117,6 @@ const UpdateContactForm = ({
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

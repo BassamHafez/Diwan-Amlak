@@ -81,7 +81,6 @@ const AddMemberForm = ({ hideModal, allPermissions }) => {
         (perm) => perm.value
       );
     }
-    console.log(updatedValues);
 
     toast.promise(
       new Promise((resolve, reject) => {
@@ -94,7 +93,6 @@ const AddMemberForm = ({ hideModal, allPermissions }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 dispatch(fetchAccountData(token));
                 resetForm();

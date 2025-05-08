@@ -15,7 +15,7 @@ const UpdateSubscriptions = ({ hideModal, refetch, sub }) => {
   const { t: key } = useTranslation();
   const requiredLabel = <span className="text-danger">*</span>;
 
-  const { mutate } = useMutation({
+  const { mutate,isPending } = useMutation({
     mutationFn: mainFormsHandlerTypeRaw,
   });
 
@@ -39,7 +39,6 @@ const UpdateSubscriptions = ({ hideModal, refetch, sub }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

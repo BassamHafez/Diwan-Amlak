@@ -54,7 +54,6 @@ const UpdateAssets = () => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 resolve();
                 resetForm();

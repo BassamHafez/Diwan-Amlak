@@ -81,7 +81,6 @@ const CustomPackageItem = ({
         method: "post",
         type: myType,
       });
-      console.log("res", res);
       if (res.status === "success") {
         setSubCost(res.data?.amount);
         setPaymentUrl(res.data?.paymentUrl);

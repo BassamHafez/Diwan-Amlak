@@ -45,7 +45,7 @@ export const mainFormsHandlerTypeFormData = async ({
       });
     } else {
       if (!token) {
-        console.log("Unauthorized");
+        console.error("Unauthorized");
         return null;
       }
       response = await axios.get(myUrl, {
@@ -57,7 +57,7 @@ export const mainFormsHandlerTypeFormData = async ({
     }
     return response.data;
   } catch (error) {
-    console.log("from http", error);
+    console.error(error);
     return error;
   }
 };
@@ -73,7 +73,6 @@ export const mainFormsHandlerTypeRaw = async ({
     Authorization: `Bearer ${token}`,
   };
   const url = `${baseServerUrl}${type}`;
-
   try {
     let response = null;
     if (validFormMethods.includes(method)) {
@@ -86,10 +85,9 @@ export const mainFormsHandlerTypeRaw = async ({
         params: isLimited ? { limit: Infinity } : undefined,
       });
     }
-    console.log("from http",response)
     return response.data;
   } catch (error) {
-    console.log("from http", error);
+    console.error(error);
     return error;
   }
 };
@@ -104,7 +102,7 @@ export const mainDeleteFunHandler = async ({ id, token, type }) => {
     );
     return response;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return error;
   }
 };
@@ -121,7 +119,7 @@ export const mainEmptyBodyFun = async ({ token, type, method }) => {
 
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return error;
   }
 };
@@ -131,7 +129,7 @@ export const getPublicData = async ({ type }) => {
     const response = await axios.get(`${baseServerUrl}${type}`);
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return error;
   }
 };

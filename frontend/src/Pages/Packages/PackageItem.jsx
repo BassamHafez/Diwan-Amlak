@@ -1,6 +1,6 @@
 import styles from "./Packages.module.css";
 import { mainFormsHandlerTypeRaw } from "../../util/Http";
-import { triangle, shape, crown, vip } from "../../shared/images";
+import { triangle, shape, crown, vip, logo } from "../../shared/images";
 import { toast, faCircleCheck, faYinYang } from "../../shared/constants";
 import { MainModal, ButtonThree, ModalForm } from "../../shared/components";
 import {
@@ -64,7 +64,6 @@ const PackageItem = ({ pack, type }) => {
       method: "post",
       type: `accounts/${accountInfo?.account?._id}/subscribe-package`,
     });
-    console.log(res);
     if (res.status === "success") {
       setSubCost(res.data?.amount);
       setIsLoading(false);
@@ -228,11 +227,14 @@ const PackageItem = ({ pack, type }) => {
           okBtn={key("continue")}
           cancelBtn={key("cancel")}
         >
-          <h5 style={{ lineHeight: 2 }}>
-            {` 💵 ${key("subscriptionCost")} [${subCost} ${key("sar")}] 
+          <div>
+            <img className={styles.logo} src={logo} alt="logo" />
+            <h5 style={{ lineHeight: 2 }}>
+              {`${key("subscriptionCost")} [${subCost} ${key("sar")}] 
             `}{" "}
-            <br /> {key("reviewPackage")}
-          </h5>
+            </h5>
+            <p className="text-secondary"> {key("reviewPackage")}</p>
+          </div>
         </MainModal>
       )}
 

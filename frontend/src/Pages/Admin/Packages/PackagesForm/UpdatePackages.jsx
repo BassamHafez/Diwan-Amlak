@@ -149,8 +149,6 @@ const UpdatePackages = ({ pack, refetch, hideModal }) => {
       features: featuresArr,
     };
 
-    console.log(updatedValues);
-
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -162,7 +160,6 @@ const UpdatePackages = ({ pack, refetch, hideModal }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 await refetch();
                 resetForm();

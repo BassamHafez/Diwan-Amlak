@@ -81,7 +81,6 @@ const UpdateAccountData = ({ accountInfo, hideModal }) => {
           },
           {
             onSuccess: (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 dispatch(fetchAccountData(token));
                 resetForm();

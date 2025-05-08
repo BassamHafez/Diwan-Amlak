@@ -51,7 +51,6 @@ const UpdateTermsForm = ({ hideModal, termsData, refetch }) => {
       en: convertedEnTerms,
       ar: convertedArTerms,
     };
-    console.log(terms);
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -63,7 +62,6 @@ const UpdateTermsForm = ({ hideModal, termsData, refetch }) => {
           },
           {
             onSuccess: async (data) => {
-              console.log(data);
               if (data?.status === "success") {
                 if (refetch) {
                   refetch();

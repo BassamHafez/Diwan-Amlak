@@ -139,12 +139,10 @@ const PropertyDetails = () => {
         id: `${propId}/favorites`,
         token: token,
       });
-      console.log(res);
       if (res?.data?.status === "success") {
         setIsMarked(false);
         refetch();
         queryClient.invalidateQueries(["bookmarked", token]);
-        console.log("hi");
         notifySuccess(key("removedSucc"));
       } else {
         notifyError(key("wrong"));
