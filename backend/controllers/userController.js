@@ -86,6 +86,33 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.deleteMe = catchAsync(async (req, res, next) => {
+  const userId = req.user.id;
+
+  const [user, account] = await Promise.all([
+    User.findByIdAndDelete(userId),
+    Account.findOne({ owner: userId }).select("members").lean(),
+  ]);
+
+  if (!user) {
+    return next(new ApiError("No user found with that ID", 404));
+  }
+
+  if (account) {
+    const membersIds = account.members.map((member) => member.user);
+
+    await Promise.all([
+      User.deleteMany({ _id: { $in: membersIds } }, { ordered: false }),
+      Account.deleteOne({ owner: userId }),
+    ]);
+  }
+
+  res.status(204).json({
+    status: "success",
+    data: null,
+  });
+});
+
 exports.updatePassword = catchAsync(async (req, res, next) => {
   const user = await User.findById(req.user.id).select("+password");
 
