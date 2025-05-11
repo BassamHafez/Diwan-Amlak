@@ -139,12 +139,18 @@ const PropertyDetails = () => {
         id: `${propId}/favorites`,
         token: token,
       });
+<<<<<<< HEAD
       console.log(res);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
       if (res?.data?.status === "success") {
         setIsMarked(false);
         refetch();
         queryClient.invalidateQueries(["bookmarked", token]);
+<<<<<<< HEAD
         console.log("hi");
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
         notifySuccess(key("removedSucc"));
       } else {
         notifyError(key("wrong"));

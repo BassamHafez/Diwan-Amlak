@@ -332,7 +332,11 @@
   "orderPackage": "Order Package",
   "loginFirst": "Please log in to continue",
   "subscriptionCost": "Subscription Cost",
+<<<<<<< HEAD
   "reviewPackage": "Feel free to review the details before continuing",
+=======
+  "reviewPackage": "You will be redirected to an external payment page, feel free to review the details before continuing",
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
   "continue": "Continue",
   "owner": "Owner",
   "officeInfo": "Office Information",
@@ -668,6 +672,14 @@
   "paymentSuccessful":"Payment completed successfully",
   "paymentFailed":"Payment Failed",
   "incomplete":"Incomplete",
+<<<<<<< HEAD
+=======
+  "readyPackage":"Ready Package",
+  "profile":"Profile",
+  "deleteUser":"Delete Account",
+  "deleteUserMsg":"Are you sure you want to delete this Account?",
+  "deleteWarning":"This action is permanent and cannot be undone. Deleting this account will result in the loss of all your data and access to the platform",
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
   "-----------------------permissions----------------------------": "-------------------------permissions---------------------------",
   "FAVORITES": "Favorites",
   "ADD_COMPOUND": "Add Estate",

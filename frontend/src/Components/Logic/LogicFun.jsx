@@ -146,6 +146,10 @@ export const filterAndRenameKeys = (
   });
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
 // estates
 const estateStatus = {
   en: {
@@ -362,10 +366,13 @@ export const calculateRevenues = (
     !paymentPeriodUnit ||
     (paymentPeriodUnit !== "year" && !unitMultipliers[paymentPeriodUnit])
   ) {
+<<<<<<< HEAD
     console.log(paymentPeriodUnit);
     console.error(
       "Invalid paymentPeriodUnit. Use 'day', 'week', 'month', or 'year'"
     );
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
     return [];
   }
 

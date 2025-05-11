@@ -112,7 +112,10 @@ const UpdateContract = ({ contract, hideModal, refetch, refetchDetails }) => {
       paymentPeriodValue: values.paymentPeriodValue,
       paymentPeriodUnit: values.paymentPeriodUnit,
     };
+<<<<<<< HEAD
     console.log(updatedValues);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
 
     toast.promise(
       new Promise((resolve, reject) => {
@@ -125,7 +128,10 @@ const UpdateContract = ({ contract, hideModal, refetch, refetchDetails }) => {
           },
           {
             onSuccess: async (data) => {
+<<<<<<< HEAD
               console.log(data);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
               if (
                 data.response?.data?.message ===
                 "There is an contract overlapping with the selected dates"
@@ -170,7 +176,10 @@ const UpdateContract = ({ contract, hideModal, refetch, refetchDetails }) => {
   });
 
   const showCalculatedRevenues = (values) => {
+<<<<<<< HEAD
     console.log(values);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
     const {
       totalAmount,
       paymentPeriodValue,

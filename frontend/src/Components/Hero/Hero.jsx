@@ -1,19 +1,14 @@
 import styles from "./Hero.module.css";
-import AOS from "aos";
 import { imgHash } from "../Logic/StaticLists";
 import { Row, Col } from "../../shared/bootstrap";
 import { ButtonTwo, ImgComponent } from "../../shared/components";
 import { circles, dash } from "../../shared/images";
-import { useTranslation, useEffect, useNavigate } from "../../shared/hooks";
+import { useTranslation, useNavigate } from "../../shared/hooks";
 
 const Hero = () => {
   let isArLang = localStorage.getItem("i18nextLng") === "ar";
   const { t: key } = useTranslation();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    AOS.init({ disable: "mobile" });
-  }, []);
 
   return (
     <header className={styles.home_header}>
@@ -22,11 +17,7 @@ const Hero = () => {
           lg={6}
           className="d-flex justify-content-center align-items-center"
         >
-          <div
-            className={styles.caption}
-            data-aos="zoom-in-up"
-            data-aos-duration="800"
-          >
+          <div className={styles.caption}>
             <h1>
               {!isArLang && <span>M</span>}
               {key("homeTitle")}
@@ -41,11 +32,7 @@ const Hero = () => {
         <Col lg={6} className={styles.header_imgs}>
           <img className={styles.cirlces} src={circles} alt="cirlce_shape" />
           <img className={styles.dash} src={dash} alt="cirlce_shape" />
-          <div
-            className={styles.img1_position}
-            data-aos="zoom-in-right"
-            data-aos-duration="800"
-          >
+          <div className={styles.img1_position}>
             <div className={styles.header1_img}>
               <div className={styles.overlay}></div>
               <ImgComponent
@@ -59,11 +46,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div
-            className={styles.img2_position}
-            data-aos="zoom-in-right"
-            data-aos-duration="800"
-          >
+          <div className={styles.img2_position}>
             <div className={styles.header2_img}>
               <div className={styles.overlay}></div>
               <ImgComponent

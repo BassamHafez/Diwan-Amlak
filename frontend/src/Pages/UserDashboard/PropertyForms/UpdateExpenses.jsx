@@ -72,8 +72,11 @@ const UpdateExpenses = ({ hideModal, refetch, exDetails, refetchDetails }) => {
     }
     const cleanedValues = cleanUpData({ ...updatedValues });
 
+<<<<<<< HEAD
     console.log(cleanedValues);
 
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
     toast.promise(
       new Promise((resolve, reject) => {
         mutate(
@@ -85,7 +88,10 @@ const UpdateExpenses = ({ hideModal, refetch, exDetails, refetchDetails }) => {
           },
           {
             onSuccess: async (data) => {
+<<<<<<< HEAD
               console.log(data);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
               if (data?.status === "success") {
                 await refetch();
                 await refetchDetails();

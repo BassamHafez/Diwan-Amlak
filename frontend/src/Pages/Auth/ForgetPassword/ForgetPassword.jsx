@@ -31,7 +31,10 @@ const ForgetPassword = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: signFormsHandler,
     onSuccess: (data) => {
+<<<<<<< HEAD
       console.log(data);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
       if (data?.data?.status === "Success") {
         setIsRightEmail(false);
         notifySuccess(key("checkResetPass"));

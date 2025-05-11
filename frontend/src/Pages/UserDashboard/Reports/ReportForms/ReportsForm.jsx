@@ -96,7 +96,10 @@ const ReportsForm = ({
       updatedValues.status = values.status;
     }
 
+<<<<<<< HEAD
     console.log(updatedValues);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
     const cleanedValues = cleanUpData({ ...updatedValues });
 
     let endPoint = "income";
@@ -142,7 +145,10 @@ const ReportsForm = ({
           },
           {
             onSuccess: (data) => {
+<<<<<<< HEAD
               console.log(data);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
               if (data?.status === "success") {
                 if (type === "contractsReport") {
                   getSearchData(data?.data, printDataValues);

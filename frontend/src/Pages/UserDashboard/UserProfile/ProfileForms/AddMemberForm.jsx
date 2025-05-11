@@ -81,7 +81,10 @@ const AddMemberForm = ({ hideModal, allPermissions }) => {
         (perm) => perm.value
       );
     }
+<<<<<<< HEAD
     console.log(updatedValues);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
 
     toast.promise(
       new Promise((resolve, reject) => {
@@ -94,7 +97,10 @@ const AddMemberForm = ({ hideModal, allPermissions }) => {
           },
           {
             onSuccess: (data) => {
+<<<<<<< HEAD
               console.log(data);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
               if (data?.status === "success") {
                 dispatch(fetchAccountData(token));
                 resetForm();

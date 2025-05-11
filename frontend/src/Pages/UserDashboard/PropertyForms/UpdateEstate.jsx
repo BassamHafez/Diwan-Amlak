@@ -106,7 +106,10 @@ const UpdateEstate = ({
   };
 
   const onSubmit = (values, { resetForm }) => {
+<<<<<<< HEAD
     console.log(values);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
     const formData = new FormData();
 
     if (values.compound?.value === "not") {
@@ -118,7 +121,10 @@ const UpdateEstate = ({
         notifyError(key("cityReq"));
         return;
       }
+<<<<<<< HEAD
       console.log("hi");
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
       formData.append("city", values.city);
       formData.append("region", values.region);
       formData.append("neighborhood", values.neighborhood || "not specified");
@@ -173,7 +179,10 @@ const UpdateEstate = ({
           },
           {
             onSuccess: async (data) => {
+<<<<<<< HEAD
               console.log(data);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
               if (data?.status === "success") {
                 await refetch();
                 if (isTagsExist) {

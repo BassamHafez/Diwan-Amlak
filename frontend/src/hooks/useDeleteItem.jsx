@@ -28,6 +28,10 @@ const useDeleteItem = () => {
             hideModal();
           }
           notifySuccess(key("deletedSucc"));
+<<<<<<< HEAD
+=======
+          return "success";
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
         } else {
           notifyError(key("wrong"));
         }

@@ -35,7 +35,11 @@ const SendMessaagesForm = ({
   const token = useSelector((state) => state.userInfo.token);
   const myIds = selectedUsers?.length > 0 ? selectedUsers : allUsers;
 
+<<<<<<< HEAD
   const { mutate } = useMutation({
+=======
+  const { mutate,isPending } = useMutation({
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
     mutationFn: mainFormsHandlerTypeFormData,
   });
 
@@ -72,7 +76,10 @@ const SendMessaagesForm = ({
           },
           {
             onSuccess: (data) => {
+<<<<<<< HEAD
               console.log(data);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
               if (data?.status === "success") {
                 clearSelectedUsersIds();
                 resolve();

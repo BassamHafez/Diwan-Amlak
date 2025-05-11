@@ -1,6 +1,10 @@
 import styles from "./Packages.module.css";
 import { mainFormsHandlerTypeRaw } from "../../util/Http";
+<<<<<<< HEAD
 import { triangle, shape, crown, vip } from "../../shared/images";
+=======
+import { triangle, shape, crown, vip, logo } from "../../shared/images";
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
 import { toast, faCircleCheck, faYinYang } from "../../shared/constants";
 import { MainModal, ButtonThree, ModalForm } from "../../shared/components";
 import {
@@ -64,7 +68,10 @@ const PackageItem = ({ pack, type }) => {
       method: "post",
       type: `accounts/${accountInfo?.account?._id}/subscribe-package`,
     });
+<<<<<<< HEAD
     console.log(res);
+=======
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
     if (res.status === "success") {
       setSubCost(res.data?.amount);
       setIsLoading(false);
@@ -228,11 +235,22 @@ const PackageItem = ({ pack, type }) => {
           okBtn={key("continue")}
           cancelBtn={key("cancel")}
         >
+<<<<<<< HEAD
           <h5 style={{ lineHeight: 2 }}>
             {` 💵 ${key("subscriptionCost")} [${subCost} ${key("sar")}] 
             `}{" "}
             <br /> {key("reviewPackage")}
           </h5>
+=======
+          <div>
+            <img className={styles.logo} src={logo} alt="logo" />
+            <h5 style={{ lineHeight: 2 }}>
+              {`${key("subscriptionCost")} [${subCost} ${key("sar")}] 
+            `}{" "}
+            </h5>
+            <p className="text-secondary"> {key("reviewPackage")}</p>
+          </div>
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
         </MainModal>
       )}
 

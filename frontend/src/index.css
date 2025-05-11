@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Quicksand:wght@300..700&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
 :root {
   --main_color: #d39833;
@@ -54,7 +53,12 @@ p {
   word-break: normal;
   overflow-wrap: break-word;
 }
-
+.hidden_img {
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 /* bootstrap */
 .dropdown-toggle::after {
   display: none !important;
@@ -374,6 +378,8 @@ p {
   transform: scaleX(1);
   transition: all 0.3s ease;
 }
+
+
 
 @keyframes check-15 {
   50% {

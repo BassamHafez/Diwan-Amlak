@@ -13,6 +13,11 @@ import useCurrentFeatures from "../hooks/useCurrentFeatures";
 import useSaveLoginData from "../hooks/useSaveLoginData";
 import useValidation from "../hooks/useValidation";
 import useAddContactInForms from "../hooks/useAddContactInForms";
+<<<<<<< HEAD
+=======
+import useSignOut from "../hooks/useSignOut";
+
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
 export {
   useFileHandler,
   useTagsOption,
@@ -28,7 +33,12 @@ export {
   useCurrentFeatures,
   useSaveLoginData,
   useValidation,
+<<<<<<< HEAD
   useAddContactInForms
+=======
+  useAddContactInForms,
+  useSignOut
+>>>>>>> 55657230ff75f63e2de97fb902e0aa94a6756b41
 };
 
 export { useDispatch, useSelector } from "react-redux";
