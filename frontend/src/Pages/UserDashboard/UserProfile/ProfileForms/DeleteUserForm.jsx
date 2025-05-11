@@ -23,7 +23,7 @@ const DeleteUserForm = () => {
     const formData = {
       itemId: profileInfo?._id,
       token: token,
-      endPoint: `delete-account`,
+      endPoint: `users`,
       hideModal: setModalShow(false),
     };
     const response = deleteItem(formData);
